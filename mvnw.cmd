@@ -23,9 +23,9 @@
 
 @IF "%__MVNW_ARG0_NAME__%"=="" (SET "BASE_DIR=%~dp0") ELSE (SET "BASE_DIR=%__MVNW_ARG0_NAME__%")
 
-@SET MAVEN_PROJECTBASEDIR=%BASE_DIR%
-@SET WRAPPER_DIR="%MAVEN_PROJECTBASEDIR%.mvn\wrapper"
-@SET WRAPPER_JAR="%WRAPPER_DIR%\maven-wrapper.jar"
+@SET MAVEN_PROJECTBASEDIR=%BASE_DIR:~0,-1%
+@SET WRAPPER_DIR=%MAVEN_PROJECTBASEDIR%\.mvn\wrapper
+@SET WRAPPER_JAR=%WRAPPER_DIR%\maven-wrapper.jar
 @SET WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
 @SET DOWNLOAD_URL="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.2.0/maven-wrapper-3.2.0.jar"
 
@@ -33,7 +33,7 @@
     @IF "%%A"=="wrapperUrl" SET DOWNLOAD_URL=%%B
 )
 
-@IF NOT EXIST %WRAPPER_JAR% (
+@IF NOT EXIST "%WRAPPER_JAR%" (
     @IF NOT "%MVNW_REPOURL%"=="" SET DOWNLOAD_URL="%MVNW_REPOURL%/org/apache/maven/wrapper/maven-wrapper/3.2.0/maven-wrapper-3.2.0.jar"
     @ECHO Downloading: %DOWNLOAD_URL%
     @powershell -Command "&{"^
@@ -63,8 +63,5 @@
 
 @SET MAVEN_OPTS=%MAVEN_OPTS% --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
 
-@%JAVA_EXE% ^
-  -classpath %WRAPPER_JAR% ^
-  "-Dmaven.multiModuleProjectDirectory=%MAVEN_PROJECTBASEDIR%" ^
-  %MAVEN_OPTS% ^
-  %WRAPPER_LAUNCHER% %MAVEN_CONFIG% %*
+@echo Running command: "%JAVA_EXE%" -classpath "%WRAPPER_JAR%" "-Dmaven.multiModuleProjectDirectory=%MAVEN_PROJECTBASEDIR%" %MAVEN_OPTS% %WRAPPER_LAUNCHER% %MAVEN_CONFIG% %*
+@%JAVA_EXE% -classpath "%WRAPPER_JAR%" "-Dmaven.multiModuleProjectDirectory=%MAVEN_PROJECTBASEDIR%" %MAVEN_OPTS% %WRAPPER_LAUNCHER% %MAVEN_CONFIG% %*

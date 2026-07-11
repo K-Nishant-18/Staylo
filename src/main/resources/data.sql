@@ -5,10 +5,10 @@
 -- ============================================================
 
 INSERT IGNORE INTO users (name, email, password, role, is_active, created_at) VALUES
-('Super Admin',     'admin@staylo.com',    '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LjTa4dvKp06', 'ADMIN',          true, NOW()),
-('Mr. Ramesh Warden', 'warden@staylo.com',  '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LjTa4dvKp06', 'WARDEN',         true, NOW()),
-('Sharma Properties', 'owner@staylo.com',   '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LjTa4dvKp06', 'PROPERTY_OWNER', true, NOW()),
-('Rahul Student',   'student@staylo.com',  '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LjTa4dvKp06', 'STUDENT',        true, NOW());
+('Super Admin',     'admin@staylo.com',    '$2a$10$heH1GYvxx/Iu5iOVS4K1QuyoOkh6jZbkecL4D33vhLariDkTYm42m', 'ADMIN',          true, NOW()),
+('Mr. Ramesh Warden', 'warden@staylo.com',  '$2a$10$heH1GYvxx/Iu5iOVS4K1QuyoOkh6jZbkecL4D33vhLariDkTYm42m', 'WARDEN',         true, NOW()),
+('Sharma Properties', 'owner@staylo.com',   '$2a$10$heH1GYvxx/Iu5iOVS4K1QuyoOkh6jZbkecL4D33vhLariDkTYm42m', 'PROPERTY_OWNER', true, NOW()),
+('Rahul Student',   'student@staylo.com',  '$2a$10$heH1GYvxx/Iu5iOVS4K1QuyoOkh6jZbkecL4D33vhLariDkTYm42m', 'STUDENT',        true, NOW());
 
 -- Hostel Rooms
 INSERT IGNORE INTO hostel_rooms (room_number, hostel_block, floor, type, capacity, occupied, monthly_fee, has_attached_bathroom, has_ac, status) VALUES

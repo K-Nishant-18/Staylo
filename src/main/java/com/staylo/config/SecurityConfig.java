@@ -34,6 +34,9 @@ public class SecurityConfig {
 
     // Public endpoints that don't require authentication
     private static final String[] PUBLIC_URLS = {
+            "/",
+            "/index.html",
+            "/static/**",
             "/api/auth/**",
             "/api/listings",          // anyone can browse PG listings
             "/swagger-ui/**",

@@ -39,6 +39,7 @@ public class AuthDTO {
     @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
     public static class LoginResponse {
         private String token;
+        @Builder.Default
         private String tokenType = "Bearer";
         private String email;
         private String name;
